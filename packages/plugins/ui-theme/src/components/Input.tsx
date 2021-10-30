@@ -1,4 +1,4 @@
-import { default as MaterialUIInput, InputProps } from '@mui/material/Input';
+import { InputProps, default as MaterialUIInput } from '@mui/material/Input';
 import React, { forwardRef } from 'react';
 
 type InputRef = HTMLDivElement;

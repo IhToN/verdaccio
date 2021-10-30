@@ -1,4 +1,4 @@
-import { ThemeProvider, Theme, StyledEngineProvider } from '@mui/material/styles';
+import { StyledEngineProvider, Theme, ThemeProvider } from '@mui/material/styles';
 import i18next from 'i18next';
 import React, { useCallback, useEffect } from 'react';
 import { useConfig } from 'verdaccio-ui/providers/config';

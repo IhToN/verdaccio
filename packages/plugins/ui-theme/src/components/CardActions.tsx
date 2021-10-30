@@ -1,4 +1,4 @@
-import { default as MaterialUICardActions, CardActionsProps } from '@mui/material/CardActions';
+import { CardActionsProps, default as MaterialUICardActions } from '@mui/material/CardActions';
 import React, { forwardRef } from 'react';
 
 type CardActionsRef = HTMLDivElement;

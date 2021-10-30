@@ -31,6 +31,7 @@ importers:
       '@changesets/cli': 2.15.0
       '@changesets/get-dependents-graph': 1.2.2
       '@crowdin/cli': 3.7.1
+      '@trivago/prettier-plugin-sort-imports': 3.0.0
       '@types/async': 3.2.7
       '@types/autocannon': 4.1.1
       '@types/autosuggest-highlight': 3.1.1
@@ -121,6 +122,7 @@ importers:
       '@changesets/cli': 2.15.0
       '@changesets/get-dependents-graph': 1.2.2
       '@crowdin/cli': 3.7.1
+      '@trivago/prettier-plugin-sort-imports': 3.0.0_prettier@2.3.2
       '@types/async': 3.2.7
       '@types/autocannon': 4.1.1
       '@types/autosuggest-highlight': 3.1.1
@@ -400,7 +402,6 @@ importers:
       '@verdaccio/types': workspace:11.0.0-6-next.9
       '@verdaccio/url': workspace:11.0.0-6-next.7
       '@verdaccio/utils': workspace:6.0.0-6-next.8
-      express: 4.17.1
       lodash: 4.17.21
       node-mocks-http: 1.10.1
     dependencies:
@@ -410,7 +411,6 @@ importers:
       lodash: 4.17.21
     devDependencies:
       '@verdaccio/types': link:../types
-      express: 4.17.1
       node-mocks-http: 1.10.1
 
   packages/core/types:
@@ -787,7 +787,7 @@ importers:
       react-router: 5.2.1
       react-router-dom: 5.3.0
       react-virtualized: 9.22.3
-      redux: 4.1.1
+      redux: 4.1.2
       rimraf: 3.0.2
       standard-version: 9.3.1
       style-loader: 3.2.1
@@ -818,7 +818,7 @@ importers:
       '@mui/icons-material': 5.0.5_3565a0d376b0012dc08925ef5e505ec5
       '@mui/material': 5.0.6_548ab84a18f5953b71f8bdc6185934b5
       '@mui/styles': 5.0.2_74cdfb704b70bfbe5b519e0c4564d995
-      '@rematch/core': 2.1.1_redux@4.1.1
+      '@rematch/core': 2.1.1_redux@4.1.2
       '@rematch/loading': 2.1.1_@rematch+core@2.1.1
       '@testing-library/dom': 8.10.1
       '@testing-library/jest-dom': 5.14.1
@@ -867,7 +867,7 @@ importers:
       react-router: 5.2.1_react@17.0.2
       react-router-dom: 5.3.0_react@17.0.2
       react-virtualized: 9.22.3_react-dom@17.0.2+react@17.0.2
-      redux: 4.1.1
+      redux: 4.1.2
       rimraf: 3.0.2
       standard-version: 9.3.1
       style-loader: 3.2.1_webpack@5.60.0
@@ -1511,6 +1511,30 @@ packages:
       - supports-color
     dev: false
 
+  /@babel/core/7.13.10:
+    resolution: {integrity: sha512-bfIYcT0BdKeAZrovpMqX2Mx5NrgAckGbwT982AkdS5GNfn3KMGiprlBAtmBcFZRUmpaufS6WZFP8trvx8ptFDw==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      '@babel/code-frame': 7.15.8
+      '@babel/generator': 7.15.8
+      '@babel/helper-compilation-targets': 7.15.4_@babel+core@7.13.10
+      '@babel/helper-module-transforms': 7.15.8
+      '@babel/helpers': 7.15.4
+      '@babel/parser': 7.15.8
+      '@babel/template': 7.15.4
+      '@babel/traverse': 7.15.4
+      '@babel/types': 7.15.6
+      convert-source-map: 1.7.0
+      debug: 4.3.2
+      gensync: 1.0.0-beta.2
+      json5: 2.2.0
+      lodash: 4.17.21
+      semver: 6.3.0
+      source-map: 0.5.7
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@babel/core/7.13.15:
     resolution: {integrity: sha512-6GXmNYeNjS2Uz+uls5jalOemgIhnTMeaXo+yBUA72kC2uX/8VW6XyhVIo2L8/q0goKQA3EVKx0KOQpVKSeWadQ==}
     engines: {node: '>=6.9.0'}
@@ -1587,6 +1611,14 @@ packages:
       source-map: 0.5.7
     dev: true
 
+  /@babel/generator/7.13.9:
+    resolution: {integrity: sha512-mHOOmY0Axl/JCTkxTU6Lf5sWOg/v8nUa+Xkt4zMTftX0wqmb6Sh7J8gvcehBw7q0AhrhAR+FDacKjCZ2X8K+Sw==}
+    dependencies:
+      '@babel/types': 7.15.6
+      jsesc: 2.5.2
+      source-map: 0.5.7
+    dev: true
+
   /@babel/generator/7.14.5:
     resolution: {integrity: sha512-y3rlP+/G25OIX3mYKKIOlQRcqj7YgrvHxOLbVmyLJ9bPmi5ttvUmpydVjcFjZphOktWuA7ovbx91ECloWTfjIA==}
     engines: {node: '>=6.9.0'}
@@ -1625,6 +1657,19 @@ packages:
     dependencies:
       '@babel/helper-explode-assignable-expression': 7.15.4
       '@babel/types': 7.15.6
+
+  /@babel/helper-compilation-targets/7.15.4_@babel+core@7.13.10:
+    resolution: {integrity: sha512-rMWPCirulnPSe4d+gwdWXLfAXTTBj8M3guAf5xFQJ0nvFY7tfNAFnWdqaHegHlgDZOCT4qvhF3BYlSJag8yhqQ==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0
+    dependencies:
+      '@babel/compat-data': 7.15.0
+      '@babel/core': 7.13.10
+      '@babel/helper-validator-option': 7.14.5
+      browserslist: 4.17.4
+      semver: 6.3.0
+    dev: true
 
   /@babel/helper-compilation-targets/7.15.4_@babel+core@7.13.15:
     resolution: {integrity: sha512-rMWPCirulnPSe4d+gwdWXLfAXTTBj8M3guAf5xFQJ0nvFY7tfNAFnWdqaHegHlgDZOCT4qvhF3BYlSJag8yhqQ==}
@@ -1967,6 +2012,12 @@ packages:
 
   /@babel/parser/7.12.5:
     resolution: {integrity: sha512-FVM6RZQ0mn2KCf1VUED7KepYeUWoVShczewOCfm3nzoBybaih51h+sYVVGthW9M6lPByEPTQf+xm27PBdlpwmQ==}
+    engines: {node: '>=6.0.0'}
+    hasBin: true
+    dev: true
+
+  /@babel/parser/7.13.10:
+    resolution: {integrity: sha512-0s7Mlrw9uTWkYua7xWr99Wpk2bnGa0ANleKfksYAES8LpWH4gW1OUr42vqKNf0us5UQNfru2wPqMqRITzq/SIQ==}
     engines: {node: '>=6.0.0'}
     hasBin: true
     dev: true
@@ -3889,6 +3940,22 @@ packages:
       - supports-color
     dev: true
 
+  /@babel/traverse/7.13.0:
+    resolution: {integrity: sha512-xys5xi5JEhzC3RzEmSGrs/b3pJW/o87SypZ+G/PhaE7uqVQNv/jlmVIBXuoh5atqQ434LfXV+sf23Oxj0bchJQ==}
+    dependencies:
+      '@babel/code-frame': 7.15.8
+      '@babel/generator': 7.15.8
+      '@babel/helper-function-name': 7.15.4
+      '@babel/helper-split-export-declaration': 7.15.4
+      '@babel/parser': 7.15.8
+      '@babel/types': 7.15.6
+      debug: 4.3.2
+      globals: 11.12.0
+      lodash: 4.17.21
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@babel/traverse/7.14.5:
     resolution: {integrity: sha512-G3BiS15vevepdmFqmUc9X+64y0viZYygubAMO8SvBmKARuF6CPSZtH4Ng9vi/lrWlZFGe3FWdXNy835akH8Glg==}
     engines: {node: '>=6.9.0'}
@@ -3924,6 +3991,14 @@ packages:
 
   /@babel/types/7.11.0:
     resolution: {integrity: sha512-O53yME4ZZI0jO1EVGtF1ePGl0LHirG4P1ibcD80XyzZcKhcMFeCXmh4Xb1ifGBIV233Qg12x4rBfQgA+tmOukA==}
+    dependencies:
+      '@babel/helper-validator-identifier': 7.15.7
+      lodash: 4.17.21
+      to-fast-properties: 2.0.0
+    dev: true
+
+  /@babel/types/7.13.0:
+    resolution: {integrity: sha512-hE+HE8rnG1Z6Wzo+MhaKE5lM5eMx71T4EHJgku2E3xIfaULhDcxiiRxUYgwX8qwP1BBSlag+TdGOt6JAidIZTA==}
     dependencies:
       '@babel/helper-validator-identifier': 7.15.7
       lodash: 4.17.21
@@ -5938,13 +6013,13 @@ packages:
     resolution: {integrity: sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=}
     dev: false
 
-  /@rematch/core/2.1.1_redux@4.1.1:
+  /@rematch/core/2.1.1_redux@4.1.2:
     resolution: {integrity: sha512-bybueWnn3r5vPFuyrx3GsVDGki5ql6x+15WI4FQLPCvRF3bbTN93X9GSz3tfNL39NcHoljVkL4t3oYDbpel23A==}
     engines: {node: '>=10'}
     peerDependencies:
       redux: '>=4'
     dependencies:
-      redux: 4.1.1
+      redux: 4.1.2
     dev: true
 
   /@rematch/loading/2.1.1_@rematch+core@2.1.1:
@@ -5952,7 +6027,7 @@ packages:
     peerDependencies:
       '@rematch/core': '>=2'
     dependencies:
-      '@rematch/core': 2.1.1_redux@4.1.1
+      '@rematch/core': 2.1.1_redux@4.1.2
     dev: true
 
   /@sideway/address/4.1.0:
@@ -6179,6 +6254,24 @@ packages:
   /@tootallnate/once/1.1.2:
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
     engines: {node: '>= 6'}
+
+  /@trivago/prettier-plugin-sort-imports/3.0.0_prettier@2.3.2:
+    resolution: {integrity: sha512-6n+shLUWKPZpSdY25VyDO+AKc5lCAuugDLtatWNrCBB2H7dJHmO4HO9EMRALrry9P4jBNi1T1orGQ/Fxm7pkNg==}
+    peerDependencies:
+      prettier: 2.x
+    dependencies:
+      '@babel/core': 7.13.10
+      '@babel/generator': 7.13.9
+      '@babel/parser': 7.13.10
+      '@babel/traverse': 7.13.0
+      '@babel/types': 7.13.0
+      '@types/lodash': 4.14.168
+      javascript-natural-sort: 0.7.1
+      lodash: 4.17.21
+      prettier: 2.3.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /@trysound/sax/0.1.1:
     resolution: {integrity: sha512-Z6DoceYb/1xSg5+e+ZlPZ9v0N16ZvZ+wYMraFue4HYrE4ttONKtsvruIRf6t9TBR0YvSOfi1hUU0fJfBLCDYow==}
@@ -6436,6 +6529,10 @@ packages:
       '@types/node': 15.12.4
     dev: true
 
+  /@types/lodash/4.14.168:
+    resolution: {integrity: sha512-oVfRvqHV/V6D1yifJbVRU3TMp8OT6o6BG+U9MkwuJ3U8/CsDHvalRpsxBqivn71ztOFZBTfJMvETbqHiaNSj7Q==}
+    dev: true
+
   /@types/lodash/4.14.175:
     resolution: {integrity: sha512-XmdEOrKQ8a1Y/yxQFOMbC47G/V2VDO1GvMRnl4O75M4GW/abC5tnfzadQYkqEveqRM1dEJGFFegfPNA2vvx2iw==}
     dev: false
@@ -6603,7 +6700,7 @@ packages:
       '@types/hoist-non-react-statics': 3.3.1
       '@types/react': 17.0.33
       hoist-non-react-statics: 3.3.2
-      redux: 4.1.1
+      redux: 4.1.2
     dev: true
 
   /@types/react-router-config/5.0.3:
@@ -6678,7 +6775,7 @@ packages:
     resolution: {integrity: sha1-8evh5UEVGAcuT9/KXHbhbnTBOZo=}
     deprecated: This is a stub types definition for Redux (https://github.com/reactjs/redux). Redux provides its own type definitions, so you don't need @types/redux installed!
     dependencies:
-      redux: 4.1.1
+      redux: 4.1.2
     dev: true
 
   /@types/request/2.48.7:
@@ -13712,6 +13809,10 @@ packages:
       istanbul-lib-report: 3.0.0
     dev: true
 
+  /javascript-natural-sort/0.7.1:
+    resolution: {integrity: sha1-+eIwPUUH9tdDVac2ZNFED7Wg71k=}
+    dev: true
+
   /jest-changed-files/27.3.0:
     resolution: {integrity: sha512-9DJs9garMHv4RhylUMZgbdCJ3+jHSkpL9aaVKp13xtXAD80qLTLrqcDZL1PHA9dYA0bCI86Nv2BhkLpLhrBcPg==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
@@ -18389,8 +18490,8 @@ packages:
       strip-indent: 3.0.0
     dev: true
 
-  /redux/4.1.1:
-    resolution: {integrity: sha512-hZQZdDEM25UY2P493kPYuKqviVwZ58lEmGQNeQ+gXa+U0gYPUBf7NKYazbe3m+bs/DzM/ahN12DbF+NG8i0CWw==}
+  /redux/4.1.2:
+    resolution: {integrity: sha512-SH8PglcebESbd/shgf6mii6EIoRM0zrQyjcuQ+ojmfxjTtE0z9Y8pa62iA/OJ58qjP6j27uyW4kUF4jl/jd6sw==}
     dependencies:
       '@babel/runtime': 7.15.4
     dev: true

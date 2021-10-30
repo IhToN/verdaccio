@@ -1,4 +1,4 @@
-import { default as MaterialUIListItem, ListItemProps } from '@mui/material/ListItem';
+import { ListItemProps, default as MaterialUIListItem } from '@mui/material/ListItem';
 import React, { forwardRef } from 'react';
 
 type ListItemRef<T extends boolean = false> = T extends true ? HTMLDivElement : HTMLLIElement;

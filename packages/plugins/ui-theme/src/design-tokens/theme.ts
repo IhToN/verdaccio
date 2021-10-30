@@ -1,5 +1,4 @@
 import { adaptV4Theme, createTheme } from '@mui/material/styles';
-
 import { PRIMARY_COLOR } from 'verdaccio-ui/utils/colors';
 
 const colors = {

@@ -1,4 +1,4 @@
-import { default as MaterialUICardContent, CardContentProps } from '@mui/material/CardContent';
+import { CardContentProps, default as MaterialUICardContent } from '@mui/material/CardContent';
 import React, { forwardRef } from 'react';
 
 type CardContentRef = HTMLElementTagNameMap[keyof HTMLElementTagNameMap];

@@ -1,4 +1,4 @@
-import { default as MaterialUICard, CardProps } from '@mui/material/Card';
+import { CardProps, default as MaterialUICard } from '@mui/material/Card';
 import React, { forwardRef } from 'react';
 
 type CardRef = HTMLDivElement;

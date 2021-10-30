@@ -1,6 +1,6 @@
 import {
-  default as MaterialUIDialogActions,
   DialogActionsProps,
+  default as MaterialUIDialogActions,
 } from '@mui/material/DialogActions';
 import React, { forwardRef } from 'react';
 

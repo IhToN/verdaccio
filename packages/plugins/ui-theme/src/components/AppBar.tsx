@@ -1,4 +1,4 @@
-import { default as MaterialUIAppBar, AppBarProps } from '@mui/material/AppBar';
+import { AppBarProps, default as MaterialUIAppBar } from '@mui/material/AppBar';
 import React, { forwardRef } from 'react';
 
 type AppBarRef = HTMLElementTagNameMap[keyof HTMLElementTagNameMap];

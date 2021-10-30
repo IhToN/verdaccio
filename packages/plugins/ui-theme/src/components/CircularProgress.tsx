@@ -1,6 +1,6 @@
 import {
-  default as MaterialUICircularProgress,
   CircularProgressProps,
+  default as MaterialUICircularProgress,
 } from '@mui/material/CircularProgress';
 import React, { forwardRef } from 'react';
 

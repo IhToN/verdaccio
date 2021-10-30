@@ -1,4 +1,4 @@
-import { default as MaterialUIFormControl, FormControlProps } from '@mui/material/FormControl';
+import { FormControlProps, default as MaterialUIFormControl } from '@mui/material/FormControl';
 import React, { forwardRef } from 'react';
 
 type FormControlRef = HTMLElementTagNameMap[keyof HTMLElementTagNameMap];
