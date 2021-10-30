@@ -1,4 +1,4 @@
-import { ButtonProps, default as MaterialUIButton } from '@material-ui/core/Button';
+import { default as MaterialUIButton, ButtonProps } from '@mui/material/Button';
 import React, { forwardRef } from 'react';
 
 type ButtonRef = HTMLButtonElement;

@@ -1,7 +1,4 @@
-import {
-  ListItemTextProps,
-  default as MaterialUIListItemText,
-} from '@material-ui/core/ListItemText';
+import { default as MaterialUIListItemText, ListItemTextProps } from '@mui/material/ListItemText';
 import React, { forwardRef } from 'react';
 
 type ListItemTextRef = HTMLDivElement;
