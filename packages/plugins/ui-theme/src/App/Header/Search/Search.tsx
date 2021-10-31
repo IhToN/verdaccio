@@ -1,5 +1,5 @@
 import debounce from 'lodash/debounce';
-import React, { FormEvent, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router';
