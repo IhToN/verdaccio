@@ -8,7 +8,7 @@ import Search from '@mui/icons-material/Search';
 import Autocomplete from '@mui/material/Autocomplete';
 import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
-import React, { useRef, FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Theme } from 'verdaccio-ui/design-tokens/theme';
 
@@ -42,8 +42,24 @@ const AutoComplete: FC<Props> = ({
   suggestionsLoading = false,
 }: Props) => {
   const { t } = useTranslation();
-  const [value, setValue] = useState(null);
-  const inputRef = useRef();
+  const [inputValue, setInputValue] = useState('');
+
+  const handleOnInputChange = (event: React.SyntheticEvent, value: string, reason: string) => {         
+    if (reason === 'input') {
+      event.preventDefault();
+      onSuggestionsFetch({ value });
+      setInputValue(value);           
+    } else if (reason === 'clear') {
+      onCleanSuggestions(event);
+      setInputValue('');
+    }
+  };
+
+  const handleOnClose = (event) => {
+    onCleanSuggestions(event);
+    setInputValue('');
+  };
+
   return (
     <Wrapper>
       <Autocomplete
@@ -51,34 +67,19 @@ const AutoComplete: FC<Props> = ({
         freeSolo={true}
         onChange={onSelectItem}
         autoHighlight={true}
+        hasClearIcon={false}
+        hasPopupIcon={false}
         id="search-header-suggest"
         options={suggestions}
+        inputValue={inputValue}
         clearOnBlur={true}
         loading={suggestionsLoading}
-        renderTags={() => {
-          console.log('render tags');
-          return null;
-        }
-        }
-        onClose={(event, reason) => {
-          if (reason === 'selectOption') {
-            onCleanSuggestions(event);
-            setValue(null);
-          }
-        }}
+        renderTags={() => null}
+        onClose={handleOnClose}
         loadingText={t('autoComplete.loading')}
-        onInputChange={(event: React.SyntheticEvent, value: string, reason: string) => {         
-          console.log('change', reason, value);
-          if (reason === 'input') {
-            event.preventDefault();
-            setValue(value);
-            onSuggestionsFetch({ value });           
-          } else if (reason === 'clear') {
-            onCleanSuggestions(event);
-          }
-        }}
+        onInputChange={handleOnInputChange}
         getOptionLabel={(option) => option.name}
-        sx={{ width: 700 }}
+        fullWidth={true}
         renderInput={(params) => (
           <TextField
             {...params}
@@ -89,7 +90,7 @@ const AutoComplete: FC<Props> = ({
                 <InputAdornment position="start">
                   <Search />
                 </InputAdornment>
-              ),
+              ),            
             }}
             label=""
           />

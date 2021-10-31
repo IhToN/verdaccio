@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+import { StyledEngineProvider } from '@mui/material/styles';
 import React from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
@@ -23,9 +24,11 @@ const renderWithStore = (ui, store) =>
 const customRender = (node: React.ReactElement, ...options: any) => {
   return render(
     <AppConfigurationProvider>
-      <ThemeProvider>
-        <I18nextProvider i18n={i18nConfig}>{node}</I18nextProvider>
-      </ThemeProvider>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider>
+          <I18nextProvider i18n={i18nConfig}>{node}</I18nextProvider>
+        </ThemeProvider>
+      </StyledEngineProvider>
     </AppConfigurationProvider>,
     ...options
   );

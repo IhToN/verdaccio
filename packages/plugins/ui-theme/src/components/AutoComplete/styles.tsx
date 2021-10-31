@@ -11,7 +11,6 @@ export interface InputFieldProps {
 
 export const Wrapper = styled('div')({
   width: '100%',
-  height: '32px',
   position: 'relative',
   zIndex: 1,
 });
