@@ -154,7 +154,6 @@ const Package: React.FC<PackageInterface> = ({
   const renderDownloadLink = (): React.ReactNode =>
     dist?.tarball &&
     isURL(dist.tarball) && (
-      // eslint-disable-next-line
       <Link
         external={true}
         onClick={() => {
@@ -174,7 +173,7 @@ const Package: React.FC<PackageInterface> = ({
   const renderPrimaryComponent = (): React.ReactNode => {
     return (
       <Grid container={true} item={true} xs={12}>
-        <Grid item={true} xs={true}>
+        <Grid item={true} xs={11}>
           <WrapperLink to={`/-/web/detail/${packageName}`}>
             <PackageTitle className="package-title">{packageName}</PackageTitle>
           </WrapperLink>
@@ -206,8 +205,6 @@ const Package: React.FC<PackageInterface> = ({
   const renderPackageListItemText = (): React.ReactNode => (
     <PackageListItemText
       className="package-link"
-      // @ts-ignore
-      component="div"
       primary={renderPrimaryComponent()}
       secondary={renderSecondaryComponent()}
     />

@@ -58,6 +58,7 @@ const fontSize = {
   md: 18,
   default: 16,
   sm: 14,
+  ssm: 12,
 };
 
 export type FontSize = keyof typeof fontSize;

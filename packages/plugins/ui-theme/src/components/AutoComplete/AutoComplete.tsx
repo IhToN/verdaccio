@@ -1,4 +1,6 @@
+import styled from '@emotion/styled';
 import Search from '@mui/icons-material/Search';
+import { Theme } from '@mui/material';
 import Autocomplete from '@mui/material/Autocomplete';
 import InputAdornment from '@mui/material/InputAdornment';
 import React, { FC, useState } from 'react';
@@ -24,6 +26,10 @@ interface Props {
   onCleanSuggestions: (event: React.SyntheticEvent) => void;
   onSelectItem: OnSelecItem;
 }
+
+const StyledInputAdornment = styled(InputAdornment)<{ theme?: Theme }>((props) => ({
+  color: props.theme?.palette.white,
+}));
 
 const AutoComplete: FC<Props> = ({
   suggestions,
@@ -60,8 +66,6 @@ const AutoComplete: FC<Props> = ({
         freeSolo={true}
         onChange={onSelectItem}
         autoHighlight={true}
-        hasClearIcon={false}
-        hasPopupIcon={false}
         id="search-header-suggest"
         options={suggestions}
         inputValue={inputValue}
@@ -80,12 +84,13 @@ const AutoComplete: FC<Props> = ({
             InputProps={{
               ...params.InputProps,
               startAdornment: startAdornment || (
-                <InputAdornment position="start">
+                <StyledInputAdornment position="start">
                   <Search />
-                </InputAdornment>
+                </StyledInputAdornment>
               ),
             }}
             label=""
+            variant="standard"
           />
         )}
       />
