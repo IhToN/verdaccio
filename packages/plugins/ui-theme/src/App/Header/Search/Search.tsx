@@ -24,6 +24,7 @@ const Search: React.FC<RouteComponentProps> = ({ history }) => {
    */
   const cancelAllSearchRequests = useCallback(() => {
     dispatch.search.clearRequestQueue();
+    dispatch.search.saveSearch({ suggestions: [] });
   }, [dispatch]);
 
   /**
