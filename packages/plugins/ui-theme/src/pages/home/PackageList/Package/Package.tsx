@@ -69,7 +69,7 @@ const Package: React.FC<PackageInterface> = ({
   time,
   version,
 }) => {
-  const config = useSelector((state: RootState) => state.configuration);
+  const config = useSelector((state: RootState) => state.configuration.config);
   const dispatch = useDispatch<Dispatch>();
   const { t } = useTranslation();
 
