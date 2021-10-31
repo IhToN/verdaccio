@@ -44,14 +44,3 @@ export const StyledTextField = styled(TextField)<{ theme?: Theme }>((props) => (
     },
   },
 }));
-
-/* eslint-disable verdaccio/jsx-spread */
-// @ts-ignore types of color are incompatible
-export const InputField: React.FC<InputFieldProps & TextFieldProps> = ({ ...others }) => (
-  <StyledTextField {...others} />
-);
-
-export const SuggestionContainer = styled(Paper)({
-  maxHeight: '500px',
-  overflowY: 'auto',
-});

@@ -12,11 +12,9 @@ const renderWithStore = (ui, store) =>
     wrapper: ({ children }) => (
       <Provider store={store}>
         <AppConfigurationProvider>
-          <StyledEngineProvider injectFirst>
-            <ThemeProvider>
-              <I18nextProvider i18n={i18nConfig}>{children}</I18nextProvider>
-            </ThemeProvider>
-          </StyledEngineProvider>
+          <ThemeProvider>
+            <I18nextProvider i18n={i18nConfig}>{children}</I18nextProvider>
+          </ThemeProvider>
         </AppConfigurationProvider>
       </Provider>
     ),
@@ -25,11 +23,9 @@ const renderWithStore = (ui, store) =>
 const customRender = (node: React.ReactElement, ...options: any) => {
   return render(
     <AppConfigurationProvider>
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider>
-          <I18nextProvider i18n={i18nConfig}>{node}</I18nextProvider>
-        </ThemeProvider>
-      </StyledEngineProvider>
+      <ThemeProvider>
+        <I18nextProvider i18n={i18nConfig}>{node}</I18nextProvider>
+      </ThemeProvider>
     </AppConfigurationProvider>,
     ...options
   );

@@ -751,6 +751,7 @@ importers:
       '@types/react-virtualized': 9.21.14
       '@types/redux': 3.6.0
       '@verdaccio/node-api': workspace:6.0.0-6-next.23
+      '@verdaccio/types': workspace:*
       autosuggest-highlight: 3.1.1
       babel-loader: 8.2.3
       babel-plugin-dynamic-import-node: 2.3.3
@@ -831,6 +832,7 @@ importers:
       '@types/react-virtualized': 9.21.14
       '@types/redux': 3.6.0
       '@verdaccio/node-api': link:../../node-api
+      '@verdaccio/types': link:../../core/types
       autosuggest-highlight: 3.1.1
       babel-loader: 8.2.3_4eb5d49c3f84a314f0749e30d940d4cb
       babel-plugin-dynamic-import-node: 2.3.3

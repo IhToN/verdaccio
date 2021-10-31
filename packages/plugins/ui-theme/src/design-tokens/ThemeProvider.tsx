@@ -3,10 +3,10 @@ import i18next from 'i18next';
 import React, { useCallback, useEffect } from 'react';
 import { useConfig } from 'verdaccio-ui/providers/config';
 
+import useLocalStorage from '../hooks/useLocalStorage';
 import ThemeContext from './ThemeContext';
 import loadDayJSLocale from './load-dayjs-locale';
 import { ThemeMode, getTheme } from './theme';
-import useLocalStorage from './useLocalStorage';
 
 declare module '@mui/styles/defaultTheme' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface

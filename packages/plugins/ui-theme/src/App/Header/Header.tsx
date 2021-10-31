@@ -62,7 +62,7 @@ const Header: React.FC<Props> = ({ withoutSearch }) => {
           </Button>
         </MobileNavBar>
       )}
-      {!loginStore.user && (
+      {!loginStore.username && (
         <LoginDialog onClose={() => setShowLoginModal(false)} open={showLoginModal} />
       )}
     </>

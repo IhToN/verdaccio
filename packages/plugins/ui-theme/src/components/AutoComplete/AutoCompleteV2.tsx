@@ -13,8 +13,8 @@ import React, {
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Theme } from 'verdaccio-ui/design-tokens/theme';
-import { useOnClickOutside } from 'verdaccio-ui/design-tokens/useOnClickOutside';
 
+import { useOnClickOutside } from '../../hooks/useOnClickOutside';
 import IconButton from '../IconButton';
 import MenuItem from '../MenuItem';
 import Paper from '../Paper';
