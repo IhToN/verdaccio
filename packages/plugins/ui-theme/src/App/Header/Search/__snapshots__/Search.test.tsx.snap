@@ -127,7 +127,7 @@ exports[`<Search /> component should load the component in default state 1`] = `
   opacity: 1;
 }
 
-.emotion-3 {
+.emotion-4 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -144,7 +144,40 @@ exports[`<Search /> component should load the component in default state 1`] = `
   width: 100%;
 }
 
-.emotion-4 {
+.emotion-4 .MuiInputBase-root:before {
+  content: '';
+  border: none;
+}
+
+.emotion-4 .MuiInputBase-root:after {
+  border-color: #fff;
+}
+
+.emotion-4 .MuiInputBase-root:hover:before {
+  content: none;
+}
+
+.emotion-4 .MuiInputBase-root:hover:after {
+  content: none;
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+@media screen and (min-width: 768px) {
+  .emotion-4 .MuiInputBase-root:hover:after {
+    content: '';
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .emotion-4 .MuiInputBase-input {
+    color: #fff;
+  }
+}
+
+.emotion-5 {
   font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -163,40 +196,75 @@ exports[`<Search /> component should load the component in default state 1`] = `
   align-items: center;
   width: 100%;
   position: relative;
-  border-radius: 4px;
-  padding-left: 14px;
-  padding-right: 14px;
 }
 
-.emotion-4.Mui-disabled {
+.emotion-5.Mui-disabled {
   color: rgba(0, 0, 0, 0.38);
   cursor: default;
 }
 
-.emotion-4:hover .MuiOutlinedInput-notchedOutline {
-  border-color: rgba(0, 0, 0, 0.87);
+label+.emotion-5 {
+  margin-top: 16px;
+}
+
+.emotion-5:after {
+  border-bottom: 2px solid #4b5e40;
+  left: 0;
+  bottom: 0;
+  content: "";
+  position: absolute;
+  right: 0;
+  -webkit-transform: scaleX(0);
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  pointer-events: none;
+}
+
+.emotion-5.Mui-focused:after {
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.emotion-5.Mui-error:after {
+  border-bottom-color: #d32f2f;
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.emotion-5:before {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+  left: 0;
+  bottom: 0;
+  content: "\\00a0";
+  position: absolute;
+  right: 0;
+  -webkit-transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  pointer-events: none;
+}
+
+.emotion-5:hover:not(.Mui-disabled):before {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.87);
 }
 
 @media (hover: none) {
-  .emotion-4:hover .MuiOutlinedInput-notchedOutline {
-    border-color: rgba(0, 0, 0, 0.23);
+  .emotion-5:hover:not(.Mui-disabled):before {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
   }
 }
 
-.emotion-4.Mui-focused .MuiOutlinedInput-notchedOutline {
-  border-color: #4b5e40;
-  border-width: 2px;
+.emotion-5.Mui-disabled:before {
+  border-bottom-style: dotted;
 }
 
-.emotion-4.Mui-error .MuiOutlinedInput-notchedOutline {
-  border-color: #d32f2f;
-}
-
-.emotion-4.Mui-disabled .MuiOutlinedInput-notchedOutline {
-  border-color: rgba(0, 0, 0, 0.26);
-}
-
-.emotion-5 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -210,9 +278,10 @@ exports[`<Search /> component should load the component in default state 1`] = `
   white-space: nowrap;
   color: rgba(0, 0, 0, 0.54);
   margin-right: 8px;
+  color: #fff;
 }
 
-.emotion-6 {
+.emotion-8 {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -229,7 +298,7 @@ exports[`<Search /> component should load the component in default state 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-7 {
+.emotion-9 {
   font: inherit;
   letter-spacing: inherit;
   color: currentColor;
@@ -247,128 +316,96 @@ exports[`<Search /> component should load the component in default state 1`] = `
   animation-name: mui-auto-fill-cancel;
   -webkit-animation-duration: 10ms;
   animation-duration: 10ms;
-  padding: 16.5px 14px;
-  padding-left: 0;
-  padding-right: 0;
 }
 
-.emotion-7::-webkit-input-placeholder {
+.emotion-9::-webkit-input-placeholder {
   color: currentColor;
   opacity: 0.42;
   -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
-.emotion-7::-moz-placeholder {
+.emotion-9::-moz-placeholder {
   color: currentColor;
   opacity: 0.42;
   -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
-.emotion-7:-ms-input-placeholder {
+.emotion-9:-ms-input-placeholder {
   color: currentColor;
   opacity: 0.42;
   -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
-.emotion-7::-ms-input-placeholder {
+.emotion-9::-ms-input-placeholder {
   color: currentColor;
   opacity: 0.42;
   -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
-.emotion-7:focus {
+.emotion-9:focus {
   outline: 0;
 }
 
-.emotion-7:invalid {
+.emotion-9:invalid {
   box-shadow: none;
 }
 
-.emotion-7::-webkit-search-decoration {
+.emotion-9::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-label[data-shrink=false]+.MuiInputBase-formControl .emotion-7::-webkit-input-placeholder {
+label[data-shrink=false]+.MuiInputBase-formControl .emotion-9::-webkit-input-placeholder {
   opacity: 0!important;
 }
 
-label[data-shrink=false]+.MuiInputBase-formControl .emotion-7::-moz-placeholder {
+label[data-shrink=false]+.MuiInputBase-formControl .emotion-9::-moz-placeholder {
   opacity: 0!important;
 }
 
-label[data-shrink=false]+.MuiInputBase-formControl .emotion-7:-ms-input-placeholder {
+label[data-shrink=false]+.MuiInputBase-formControl .emotion-9:-ms-input-placeholder {
   opacity: 0!important;
 }
 
-label[data-shrink=false]+.MuiInputBase-formControl .emotion-7::-ms-input-placeholder {
+label[data-shrink=false]+.MuiInputBase-formControl .emotion-9::-ms-input-placeholder {
   opacity: 0!important;
 }
 
-label[data-shrink=false]+.MuiInputBase-formControl .emotion-7:focus::-webkit-input-placeholder {
+label[data-shrink=false]+.MuiInputBase-formControl .emotion-9:focus::-webkit-input-placeholder {
   opacity: 0.42;
 }
 
-label[data-shrink=false]+.MuiInputBase-formControl .emotion-7:focus::-moz-placeholder {
+label[data-shrink=false]+.MuiInputBase-formControl .emotion-9:focus::-moz-placeholder {
   opacity: 0.42;
 }
 
-label[data-shrink=false]+.MuiInputBase-formControl .emotion-7:focus:-ms-input-placeholder {
+label[data-shrink=false]+.MuiInputBase-formControl .emotion-9:focus:-ms-input-placeholder {
   opacity: 0.42;
 }
 
-label[data-shrink=false]+.MuiInputBase-formControl .emotion-7:focus::-ms-input-placeholder {
+label[data-shrink=false]+.MuiInputBase-formControl .emotion-9:focus::-ms-input-placeholder {
   opacity: 0.42;
 }
 
-.emotion-7.Mui-disabled {
+.emotion-9.Mui-disabled {
   opacity: 1;
   -webkit-text-fill-color: rgba(0, 0, 0, 0.38);
 }
 
-.emotion-7:-webkit-autofill {
+.emotion-9:-webkit-autofill {
   -webkit-animation-duration: 5000s;
   animation-duration: 5000s;
   -webkit-animation-name: mui-auto-fill;
   animation-name: mui-auto-fill;
 }
 
-.emotion-7:-webkit-autofill {
-  border-radius: inherit;
-}
-
-.emotion-8 {
+.emotion-10 {
   position: absolute;
   right: 0;
   top: calc(50% - 14px);
-}
-
-.emotion-9 {
-  text-align: left;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  top: -5px;
-  left: 0;
-  margin: 0;
-  padding: 0 8px;
-  pointer-events: none;
-  border-radius: inherit;
-  border-style: solid;
-  border-width: 1px;
-  overflow: hidden;
-  min-width: 0%;
-  border-color: rgba(0, 0, 0, 0.23);
-}
-
-.emotion-10 {
-  padding: 0;
-  line-height: 11px;
-  -webkit-transition: width 150ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
-  transition: width 150ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
 }
 
 <div
@@ -380,14 +417,14 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-7:focus::-ms-input-p
     role="combobox"
   >
     <div
-      class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root emotion-3"
+      class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root emotion-3 emotion-4"
     >
       
       <div
-        class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedStart MuiInputBase-adornedEnd MuiAutocomplete-inputRoot emotion-4"
+        class="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedStart MuiInputBase-adornedEnd MuiAutocomplete-inputRoot emotion-5"
       >
         <div
-          class="MuiInputAdornment-root MuiInputAdornment-positionStart MuiInputAdornment-outlined MuiInputAdornment-sizeMedium emotion-5"
+          class="MuiInputAdornment-root MuiInputAdornment-positionStart MuiInputAdornment-standard MuiInputAdornment-sizeMedium emotion-6 emotion-7"
         >
           <span
             class="notranslate"
@@ -396,7 +433,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-7:focus::-ms-input-p
           </span>
           <svg
             aria-hidden="true"
-            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium emotion-6"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium emotion-8"
             data-testid="SearchIcon"
             focusable="false"
             viewBox="0 0 24 24"
@@ -411,7 +448,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-7:focus::-ms-input-p
           aria-invalid="false"
           autocapitalize="none"
           autocomplete="off"
-          class="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedStart MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused MuiAutocomplete-input MuiAutocomplete-inputFocused emotion-7"
+          class="MuiInput-input MuiInputBase-input MuiInputBase-inputAdornedStart MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused MuiAutocomplete-input MuiAutocomplete-inputFocused emotion-9"
           id="search-header-suggest"
           placeholder="Search Packages"
           spellcheck="false"
@@ -419,22 +456,8 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-7:focus::-ms-input-p
           value=""
         />
         <div
-          class="MuiAutocomplete-endAdornment emotion-8"
+          class="MuiAutocomplete-endAdornment emotion-10"
         />
-        <fieldset
-          aria-hidden="true"
-          class="MuiOutlinedInput-notchedOutline emotion-9"
-        >
-          <legend
-            class="emotion-10"
-          >
-            <span
-              class="notranslate"
-            >
-              ​
-            </span>
-          </legend>
-        </fieldset>
       </div>
     </div>
   </div>
